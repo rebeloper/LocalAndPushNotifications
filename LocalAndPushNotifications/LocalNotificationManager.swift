@@ -41,7 +41,7 @@ struct LocalNotificationManager {
         notifications.append(LocalNotification(id: UUID().uuidString, title: title, body: body))
     }
     
-    static private func scheduleNotifications(_ durationInSeconds: Int, repeats: Bool) {
+    static private func scheduleNotifications(_ durationInSeconds: Int, repeats: Bool, userInfo: [AnyHashable : Any]) {
         UIApplication.shared.applicationIconBadgeNumber = 0
         for notification in notifications {
             let content = UNMutableNotificationContent()
@@ -49,6 +49,7 @@ struct LocalNotificationManager {
             content.body = notification.body
             content.sound = UNNotificationSound.default
             content.badge = NSNumber(value: UIApplication.shared.applicationIconBadgeNumber + 1)
+            content.userInfo = userInfo
             
             let trigger = UNTimeIntervalNotificationTrigger(timeInterval: TimeInterval(durationInSeconds), repeats: repeats)
             let request = UNNotificationRequest(identifier: notification.id, content: content, trigger: trigger)
@@ -62,7 +63,7 @@ struct LocalNotificationManager {
         notifications.removeAll()
     }
     
-    static private func scheduleNotifications(_ duration: Int, of type: LocalNotificationDurationType, repeats: Bool) {
+    static private func scheduleNotifications(_ duration: Int, of type: LocalNotificationDurationType, repeats: Bool, userInfo: [AnyHashable : Any]) {
         var seconds = 0
         switch type {
         case .seconds:
@@ -74,17 +75,17 @@ struct LocalNotificationManager {
         case .days:
             seconds = duration * 60 * 60 * 24
         }
-        scheduleNotifications(seconds, repeats: repeats)
+        scheduleNotifications(seconds, repeats: repeats, userInfo: userInfo)
     }
     
     static func cancel() {
         UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
     }
     
-    static func setNotification(_ duration: Int, of type: LocalNotificationDurationType, repeats: Bool, title: String, body: String) {
+    static func setNotification(_ duration: Int, of type: LocalNotificationDurationType, repeats: Bool, title: String, body: String, userInfo: [AnyHashable : Any]) {
         requestPermission()
         addNotification(title: title, body: body)
-        scheduleNotifications(duration, of: type, repeats: repeats)
+        scheduleNotifications(duration, of: type, repeats: repeats, userInfo: userInfo)
     }
 
 }

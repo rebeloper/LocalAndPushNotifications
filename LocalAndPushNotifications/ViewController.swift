@@ -18,7 +18,7 @@ class ViewController: UIViewController {
     @IBAction func didTapLocalNotificationButton(_ sender: Any) {
         let alertController = UIAlertController(title: "Local Notification", message: nil, preferredStyle: .actionSheet)
         let setLocalNotificationAction = UIAlertAction(title: "Set", style: .default) { (action) in
-            LocalNotificationManager.setNotification(5, of: .seconds, repeats: false, title: "Test", body: "Hello test")
+            LocalNotificationManager.setNotification(5, of: .seconds, repeats: false, title: "Hello", body: "local", userInfo: ["aps" : ["hello" : "world"]])
         }
         let removeLocalNotificationAction = UIAlertAction(title: "Remove", style: .default) { (action) in
             LocalNotificationManager.cancel()
@@ -31,4 +31,10 @@ class ViewController: UIViewController {
     }
     
 }
+
+// Testing Push Notifications Resources:
+// poes send com.rebeloper.LocalAndPushNotifications --title Hello --body push --badge 1 --verbose
+// https://github.com/AvdLee/Poes
+// https://github.com/yonaskolb/mint
+// https://brew.sh
 
