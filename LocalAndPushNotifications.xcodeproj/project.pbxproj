@@ -13,6 +13,7 @@
 		C98188642507EFF600E79ECC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C98188622507EFF600E79ECC /* Main.storyboard */; };
 		C98188662507EFF800E79ECC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C98188652507EFF800E79ECC /* Assets.xcassets */; };
 		C98188692507EFF800E79ECC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C98188672507EFF800E79ECC /* LaunchScreen.storyboard */; };
+		C98188712507F09C00E79ECC /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98188702507F09C00E79ECC /* LocalNotificationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		C98188652507EFF800E79ECC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C98188682507EFF800E79ECC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C981886A2507EFF800E79ECC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C98188702507F09C00E79ECC /* LocalNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				C98188652507EFF800E79ECC /* Assets.xcassets */,
 				C98188672507EFF800E79ECC /* LaunchScreen.storyboard */,
 				C981886A2507EFF800E79ECC /* Info.plist */,
+				C98188702507F09C00E79ECC /* LocalNotificationManager.swift */,
 			);
 			path = LocalAndPushNotifications;
 			sourceTree = "<group>";
@@ -140,6 +143,7 @@
 			files = (
 				C98188612507EFF600E79ECC /* ViewController.swift in Sources */,
 				C981885D2507EFF600E79ECC /* AppDelegate.swift in Sources */,
+				C98188712507F09C00E79ECC /* LocalNotificationManager.swift in Sources */,
 				C981885F2507EFF600E79ECC /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
