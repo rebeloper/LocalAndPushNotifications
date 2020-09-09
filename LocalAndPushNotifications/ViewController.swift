@@ -40,6 +40,7 @@ class ViewController: UIViewController {
 
 // https://github.com/twostraws/ControlRoom
 
+// https://firebase.google.com/docs/cloud-messaging/ios/certs#create_the_authentication_key
 // https://firebase.google.com/docs/cloud-messaging/ios/client
 // https://firebase.google.com/docs/functions/callable
 // Push notifications Typescript cloud function: https://rebeloper.com/mentoring
